@@ -96,11 +96,7 @@
             <span class="login100-form-title p-b-49">
                 SuccessMotors Application Mode
             </span>
-            <input
-              type="hidden"
-              name="captcha_settings"
-              value='{"keyname":"Test2","fallback":"true","orgId":"00D5i000001x5D4","ts":""}'
-            />
+            <input type="hidden" name="captcha_settings" value='{"keyname":"Test2","fallback":"true","orgId":"00D5i000001x5D4","ts":""}'/>
             <input type="hidden" name="oid" value="00D5i000001x5D4" />
             <input type="hidden" name="retURL" value="http://yandex.ru" />
 
@@ -110,66 +106,104 @@
             <!--  <input type="hidden" name="debug" value=1>                              -->
             <!--  <input type="hidden" name="debugEmail" value="vadimdvv153@gmail.com">   -->
             <!--  ----------------------------------------------------------------------  -->
-
-            <label for="company">Company</label
-            ><input
-              id="company"
-              maxlength="40"
-              name="company"
-              size="20"
-              type="text"
-            /><br />
-
-            <label for="first_name">First Name</label
-            ><input
-              id="first_name"
-              maxlength="40"
-              name="first_name"
-              size="20"
-              type="text"
-            /><br />
-
-            <label for="last_name">Last Name</label
-            ><input
-              id="last_name"
-              maxlength="80"
-              name="last_name"
-              size="20"
-              type="text"
-            /><br />
-
-            <label for="email">Email</label
-            ><input
-              id="email"
-              maxlength="80"
-              name="email"
-              size="20"
-              type="text"
-            /><br />
-
-            <label for="phone">Phone</label
-            ><input
-              id="phone"
-              maxlength="40"
-              name="phone"
-              size="20"
-              type="text"
-            /><br />
-
-            Product:<input
-              id="00N5i000003iooa"
-              maxlength="40"
-              name="00N5i000003iooa"
-              size="20"
-              type="text"
-            /><br />
-
-            <div
-              class="g-recaptcha"
-              data-sitekey="6LfngOcfAAAAANvBHnOaYpqySvl6kF_4Ol9ehPNb"
-            ></div>
+            <div class="wrap-input100 validate-input m-b-23" data-validate = "Username is reauired">
+                <!--<span class="label-input100">Company</span>-->
+                <label for="company">Company</label>
+                <input class="input100" placeholder="Type your Company" id="company" maxlength="40" name="company" size="20" type="text"/>
+                <span class="focus-input100" data-symbol="&#xf206;"></span>
+                <br />
+            </div>
+            
+            <div class="wrap-input100 validate-input m-b-23" data-validate = "Username is reauired">
+                <!--<span class="label-input100">Name</span>-->
+                <label for="first_name">First Name</label>
+                <input class="input100" placeholder="Type your First Name" id="first_name" maxlength="40" name="first_name" size="20" type="text" />
+                <span class="focus-input100" data-symbol="&#xf206;"></span>
+                <br />
+            </div>
+            
+            <div class="wrap-input100 validate-input m-b-23" data-validate = "Username is reauired">
+                <!--<span class="label-input100">Last Name</span>-->
+                <label for="last_name">Last Name</label>
+                <input class="input100" placeholder="Type your Last Name" id="last_name" maxlength="80" name="last_name" size="20" type="text" />
+                <span class="focus-input100" data-symbol="&#xf206;"></span>
+                <br />
+            </div>
+            
+            <div class="wrap-input100 validate-input m-b-23" data-validate = "Username is reauired">
+                <!--<span class="label-input100">Email</span>-->
+                <label for="email">Email</label>
+                <input class="input100" placeholder="Type your Email" id="email" maxlength="80" name="email" size="20" type="text" />
+                <span class="focus-input100" data-symbol="&#xf206;"></span>
+                <br />
+            </div>
+            
+            <div class="wrap-input100 validate-input m-b-23" data-validate = "Username is reauired">
+                <!--<span class="label-input100">Phone</span>-->
+                <label for="phone">Phone</label>
+                <input class="input100" placeholder="Type your Phone" id="phone" maxlength="40" name="phone" size="20" type="text"/>
+                <span class="focus-input100" data-symbol="&#xf206;"></span>
+                <br />
+            </div>
+            
+            <div class="wrap-input100 validate-input m-b-23" data-validate = "Username is reauired">
+                Product:
+                <br>
+                <div class="custom-select">
+                    <select name="00N5i000004mHlV" overflow="auto">
+                    <option value="Product Code">Choose your product:</option>
+                    <option value="R001C1">Renault Logan</option>
+                    <option value="R002C2">Renault Logan Stepway</option>
+                    <option value="R003C3">Renault Sander</option>
+                    <option value="R004C4">Renault Sandero Stepway</option>
+                    <option value="R005E1">K7M</option>
+                    <option value="R006E2">K4M</option>
+                    <option value="R007E3">H4M</option>
+                    <option value="HK001C1">Kia Rio</option>
+                    <option value="HK002C2">Kia Rio X-Line</option>
+                    <option value="HK003C3">Hyundai Accent</option>
+                    <option value="HK004C4">Hyundai Solaris</option>
+                    <option value="HK005E1">G4LC</option>
+                    <option value="HK006E2">>G4FG</option>
+                    <option value="VAG001C1">Volkswagen Polo Sedan</option>
+                    <option value="VAG002C2">Volkswagen Polo 2021</option>
+                    <option value="VAG003C3">Skoda Rapid</option>
+                    <option value="VAG004E1">CZCA</option>
+                    <option value="VAG005E2">CFW</option>
+                    <option value="VAG006E3">CWVA</option>
+                    <option value="VAG007E4">CFNA</option>
+                    <option value="VAG008E5">CFNB</option>
+                    <option value="L001C1">Lada Vesta</option>
+                    <option value="L002C2">Lada Xray</option>
+                    <option value="L003E1">VAZ-21179</option>
+                    <option value="L004E2">VAZ-21129</option>
+                    <option value="R008A1">Carpets Renault</option>
+                    <option value="HK007A1">Carpets Hyundai</option>
+                    <option value="HK008A2">Carpets Kia</option>
+                    <option value="VAG009A1">Carpets Volkswagen</option>
+                    <option value="VAG010A2">Carpets Skoda</option>
+                    <option value="L005A1">Carpets Lada</option>
+                    <option value="MI001A1">Phone holder Xiaomi</option>
+                    </select>
+                </div>
+            </div>
+            
+            <input id="00N5i000003iooa" maxlength="40" name="00N5i000003iooa" size="20" type="text"/>
             <br />
-            <input type="submit" name="submit" />
+
+            <div class="g-recaptcha" data-sitekey="6LfngOcfAAAAANvBHnOaYpqySvl6kF_4Ol9ehPNb"></div>
+            <br />
+            
+            <div class="container-login100-form-btn">
+                <div class="wrap-login100-form-btn">
+                    <div class="login100-form-bgbtn"></div>
+                    <button type="submit" class="login100-form-btn" name="submit">
+                        Send
+                    </button>
+                    <!--<input class="login100-form-btn" type="submit" name="submit" />-->
+                </div>
+            </div>
+
           </form>
 
         </div>
