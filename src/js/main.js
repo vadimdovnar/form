@@ -66,5 +66,7 @@
         $(thisAlert).removeClass('alert-validate');
     }
 
+    const valid = new Validation();
+    valid.validateForm();
 
 })(jQuery);
