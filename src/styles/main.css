@@ -380,6 +380,32 @@ iframe {
   position: relative;
 }
 
+div.input100.wrap-options.alert-validate::before {
+  content: attr(data-validate);
+  bottom: calc((100% - 50px) / 2);
+}
+
+div.input100.wrap-options.alert-validate::after {
+  content: "\f06a";
+  bottom: calc((100% - 50px) / 2);
+}
+
+.alert-validate::after {
+  content: "\f06a";
+  font-family: FontAwesome;
+  display: block;
+  position: absolute;
+  color: #c80000;
+  font-size: 16px;
+  bottom: calc((100% - 10px) / 2);
+  -webkit-transform: translateY(50%);
+  -moz-transform: translateY(50%);
+  -ms-transform: translateY(50%);
+  -o-transform: translateY(50%);
+  transform: translateY(50%);
+  right: 8px;
+}
+
 .alert-validate::before {
   content: attr(data-validate);
   position: absolute;
@@ -388,7 +414,7 @@ iframe {
   border: 1px solid #c80000;
   border-radius: 2px;
   padding: 4px 25px 4px 10px;
-  bottom: calc((100% - 20px) / 2);
+  bottom: calc((100% - 10px) / 2);
   -webkit-transform: translateY(50%);
   -moz-transform: translateY(50%);
   -ms-transform: translateY(50%);
@@ -412,20 +438,12 @@ iframe {
   transition: opacity 0.4s;
 }
 
-.alert-validate::after {
-  content: "\f06a";
-  font-family: FontAwesome;
-  display: block;
-  position: absolute;
-  color: #c80000;
-  font-size: 16px;
-  bottom: calc((100% - 20px) / 2);
-  -webkit-transform: translateY(50%);
-  -moz-transform: translateY(50%);
-  -ms-transform: translateY(50%);
-  -o-transform: translateY(50%);
-  transform: translateY(50%);
-  right: 8px;
+div.wrap-product.validate-input.m-b-23.alert-validate::after {
+  bottom: calc((100% - 55px) / 2);
+}
+
+div.wrap-product.validate-input.m-b-23.alert-validate::before {
+  bottom: calc((100% - 55px) / 2);
 }
 
 .alert-validate:hover:before {

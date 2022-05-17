@@ -17,6 +17,7 @@
     [ Focus input ]*/
     $('.input100').each(function(){
         $(this).on('blur', function(){
+
             if($(this).val().trim() != "") {
                 $(this).addClass('has-val');
             }
@@ -25,37 +26,64 @@
             }
         })    
     })
-  
+
+    /*=================================================================
+    [Change select]*/
+    $('.select').each(function(){
+        $(this).on('change', function(){
+
+            if($(this).val().trim() != "undefined") {
+                $(this).addClass('has-val');
+            }
+            else {
+                $(this).removeClass('has-val');
+            }
+        })    
+    })
   
     /*==================================================================
     [ Validate ]*/
     var input = $('.validate-input .input100');
-
+    var selectElem = $('.validate-input .select');
     $('.validate-form').on('submit',function(){
         var check = true;
-
+        var checkForSelect = true;
         for(var i=0; i<input.length; i++) {
-            if(validate(input[i]) == false){
-                showValidate(input[i]);
-                check=false;
+            if (input[i].classList.contains('wrap-options')) {
+                continue;
+            } else {
+                if(validate(input[i]) == false){
+                    showValidate(input[i]);
+                    check = false;
+                }
             }
         }
-
-        return check;
+        if(validate(selectElem) == false) {
+            showValidate(selectElem);
+            checkForSelect = false;
+        }
+        var result = !(check == false || checkForSelect == false);
+        return result;
     });
 
 
     $('.validate-form .input100').each(function(){
         $(this).focus(function(){
-           hideValidate(this);
+            hideValidate($(this));
+        });
+    });
+    
+    $('.validate-form .select').each(function(){
+        $(this).change(function(){
+           hideValidate($(this));
         });
     });
 
-    function validate (input) {
+    
 
+    function validate (input) {
         var rule = $(input).attr('data-rule');
-        var result = $(input).val().trim() == '' ? false : validDataRule(rule, input);
-        
+        var result = ($(input).val().trim() == '' || $(input).val() == "undefined") ? false : validDataRule(rule, input);
         return result;
     }
 
@@ -90,19 +118,37 @@
                     return false;
                 }
             break;
+
+            case 'product':
+                if(value == "undefined") {
+                    return false;
+                }
+            break;
         }
     }
+    
 
     function showValidate(input) {
-        var thisAlert = $(input).parent();
-
-        $(thisAlert).addClass('alert-validate');
+        if (input.tagName == 'INPUT' || input.hasClass('input100')) {
+            console.log('input');
+            var thisAlert = $(input).parent();
+            $(thisAlert).addClass('alert-validate');
+        } else {
+            console.log('select');
+            $('.wrap-product').addClass('alert-validate');
+        }       
     }
-
+    
     function hideValidate(input) {
-        var thisAlert = $(input).parent();
-
-        $(thisAlert).removeClass('alert-validate');
+        if (input.tagName == 'INPUT' || input.hasClass('input100')) {
+            console.log('input');
+            var thisAlert = $(input).parent();
+            $(thisAlert).removeClass('alert-validate');
+        } else {
+            console.log('select');
+            $('.wrap-product').removeClass('alert-validate');
+        }
+            
     }
 
     
