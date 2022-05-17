@@ -506,3 +506,10 @@ div.wrap-product.validate-input.m-b-23.alert-validate::before {
   padding: 10px;
 }
 
+.g-recaptcha {
+  margin: 0 0 0 12%;
+}
+
+.hidden {
+  display: none;
+}
