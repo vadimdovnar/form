@@ -62,7 +62,7 @@
     <!--===============================================================================================-->
 
     <META HTTP-EQUIV="Content-type" CONTENT="text/html; charset=UTF-8">
-
+    <link rel="stylesheet" href="/src/images/bg-01.jpg">
   </head>
 
   <body>
@@ -76,107 +76,93 @@
     <!--  NOTE: Please add the following <FORM> element to your page.             -->
     <!--  ----------------------------------------------------------------------  -->
 
-    
-
-      
-
     <div class="limiter">
 
-      <div class="container-login100" style="background-image: url('src/images/bg-01.jpg')">
+    <div class="container-login100" style="background-image: url('/src/images/bg-01.jpg');">
 
         <div class="wrap-login100 p-l-55 p-r-55 p-t-65 p-b-54">
 
-          <form action="https://webto.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8" method="POST" class="login100-form validate-form"></form>
-
+          <form action="https://webto.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8" method="POST" class="login100-form validate-form">
             <span class="login100-form-title p-b-49">
-                SuccessMotors Application Mode
+              SuccessMotors Application Mode
             </span>
-            <input type=hidden name='captcha_settings' value='{"keyname":"forForm","fallback":"true","orgId":"00D5i000001x5D4","ts":""}'>
-            <input type=hidden name="oid" value="00D5i000001x5D4">
-            <input type=hidden name="retURL" value="https://login.salesforce.com/">
-
-            <!--  ----------------------------------------------------------------------  -->
-            <!--  NOTE: These fields are optional debugging elements. Please uncomment    -->
-            <!--  these lines if you wish to test in debug mode.                          -->
-            <!--  <input type="hidden" name="debug" value=1>                              -->
-            <!--  <input type="hidden" name="debugEmail" value="vadimdvv153@gmail.com">   -->
-            <!--  ----------------------------------------------------------------------  -->
+  
             <div class="wrap-input100 validate-input m-b-23" data-validate = "no Company selected or no data entered">
-                <label for="company">Company</label>
-                <input class="input100" data-rule="string-company" data-from="1" data-to="25" placeholder="Type your Company" id="company" maxlength="40" name="company" size="20" type="text"/>
-                <span class="focus-input100" data-symbol="&#xf286;"></span>
-                <br />
+              <label for="company">Company</label>
+              <input class="input100" data-rule="string-company" data-from="1" data-to="25" placeholder="Type your Company" id="company" maxlength="40" name="company" size="20" type="text"/>
+              <span class="focus-input100" data-symbol="&#xf286;"></span>
+              <br />
             </div>
-            
+          
             <div class="wrap-input100 validate-input m-b-23" data-validate = "no First Name selected or no data entered">
                 <label for="first_name">First Name</label>
                 <input class="input100" data-rule="string-name" data-from="1" data-to="16" placeholder="Type your First Name" id="first_name" maxlength="40" name="first_name" size="20" type="text" />
                 <span class="focus-input100" data-symbol="&#xf206;"></span>
                 <br />
             </div>
-            
+          
             <div class="wrap-input100 validate-input m-b-23" data-validate = "no Last Name selected or no data entered">
                 <label for="last_name">Last Name</label>
                 <input class="input100" data-rule="string-name" data-from="1" data-to="16" placeholder="Type your Last Name" id="last_name" maxlength="80" name="last_name" size="20" type="text" />
                 <span class="focus-input100" data-symbol="&#xf206;"></span>
                 <br />
             </div>
-            
+          
             <div class="wrap-input100 validate-input m-b-23" data-validate = "no Email selected or no data entered">
                 <label for="email">Email</label>
                 <input class="input100" data-rule="email" placeholder="Type your Email" id="email" maxlength="80" name="email" size="20" type="text" />
                 <span class="focus-input100" data-symbol="&#xf15a;"></span>
                 <br />
             </div>
-            
+          
             <div class="wrap-input100 validate-input m-b-23" data-validate = "no Phone selected or no data entered">
                 <label for="phone">Phone</label>
                 <input class="input100 input-phone" data-rule="phone" placeholder="Type your Phone" id="phone" maxlength="40" name="phone" size="20" type="text"/>
                 <span class="focus-input100" data-symbol="&#xf2b9;"></span>
                 <br />
             </div>
-            
+
             <div class="wrap-product validate-input m-b-23" data-validate = "No Product selected">
-                Product:
-                <div class="input100 wrap-options ">
-                    <select class="options-style select" data-rule="product" onchange="if (this.selectedIndex) document.querySelector('.select').dataset.selectedIndex = true; " id="00N5i000003iooa" name="00N5i000003iooa" overflow="auto">
-                      <option class="choosing hidden" value="undefined" >Choose your product:</option>
-                      <option value="R001C1">Renault Logan</option>
-                      <option value="R002C2">Renault Logan Stepway</option>
-                      <option value="R003C3">Renault Sander</option>
-                      <option value="R004C4">Renault Sandero Stepway</option>
-                      <option value="R005E1">K7M</option>
-                      <option value="R006E2">K4M</option>
-                      <option value="R007E3">H4M</option>
-                      <option value="HK001C1">Kia Rio</option>
-                      <option value="HK002C2">Kia Rio X-Line</option>
-                      <option value="HK003C3">Hyundai Accent</option>
-                      <option value="HK004C4">Hyundai Solaris</option>
-                      <option value="HK005E1">G4LC</option>
-                      <option value="HK006E2">G4FG</option>
-                      <option value="VAG001C1">Volkswagen Polo Sedan</option>
-                      <option value="VAG002C2">Volkswagen Polo 2021</option>
-                      <option value="VAG003C3">Skoda Rapid</option>
-                      <option value="VAG004E1">CZCA</option>
-                      <option value="VAG005E2">CFW</option>
-                      <option value="VAG006E3">CWVA</option>
-                      <option value="VAG007E4">CFNA</option>
-                      <option value="VAG008E5">CFNB</option>
-                      <option value="L001C1">Lada Vesta</option>
-                      <option value="L002C2">Lada Xray</option>
-                      <option value="L003E1">VAZ-21179</option>
-                      <option value="L004E2">VAZ-21129</option>
-                      <option value="R008A1">Carpets Renault</option>
-                      <option value="HK007A1">Carpets Hyundai</option>
-                      <option value="HK008A2">Carpets Kia</option>
-                      <option value="VAG009A1">Carpets Volkswagen</option>
-                      <option value="VAG010A2">Carpets Skoda</option>
-                      <option value="L005A1">Carpets Lada</option>
-                      <option value="MI001A1">Phone holder Xiaomi</option>
-                    </select>
-                </div>
+              Product:
+              <div class="input100 wrap-options ">
+                  <select class="options-style select" data-rule="product" onchange="if (this.selectedIndex) document.querySelector('.select').dataset.selectedIndex = true; " id="00N5i000003iooa" name="00N5i000003iooa" overflow="auto">
+                    <option class="choosing hidden" value="undefined" >Choose your product:</option>
+                    <option value="R001C1">Renault Logan</option>
+                    <option value="R002C2">Renault Logan Stepway</option>
+                    <option value="R003C3">Renault Sander</option>
+                    <option value="R004C4">Renault Sandero Stepway</option>
+                    <option value="R005E1">K7M</option>
+                    <option value="R006E2">K4M</option>
+                    <option value="R007E3">H4M</option>
+                    <option value="HK001C1">Kia Rio</option>
+                    <option value="HK002C2">Kia Rio X-Line</option>
+                    <option value="HK003C3">Hyundai Accent</option>
+                    <option value="HK004C4">Hyundai Solaris</option>
+                    <option value="HK005E1">G4LC</option>
+                    <option value="HK006E2">G4FG</option>
+                    <option value="VAG001C1">Volkswagen Polo Sedan</option>
+                    <option value="VAG002C2">Volkswagen Polo 2021</option>
+                    <option value="VAG003C3">Skoda Rapid</option>
+                    <option value="VAG004E1">CZCA</option>
+                    <option value="VAG005E2">CFW</option>
+                    <option value="VAG006E3">CWVA</option>
+                    <option value="VAG007E4">CFNA</option>
+                    <option value="VAG008E5">CFNB</option>
+                    <option value="L001C1">Lada Vesta</option>
+                    <option value="L002C2">Lada Xray</option>
+                    <option value="L003E1">VAZ-21179</option>
+                    <option value="L004E2">VAZ-21129</option>
+                    <option value="R008A1">Carpets Renault</option>
+                    <option value="HK007A1">Carpets Hyundai</option>
+                    <option value="HK008A2">Carpets Kia</option>
+                    <option value="VAG009A1">Carpets Volkswagen</option>
+                    <option value="VAG010A2">Carpets Skoda</option>
+                    <option value="L005A1">Carpets Lada</option>
+                    <option value="MI001A1">Phone holder Xiaomi</option>
+                  </select>
+              </div>
             </div>
-            
+  
             <input  id="00N5i000003iooa" maxlength="40" name="00N5i000003iooa" size="20" type="text" />
             <br>
 
@@ -184,21 +170,17 @@
             <br>
             
             <div class="container-login100-form-btn">
-                <div class="wrap-login100-form-btn">
-                    <div class="login100-form-bgbtn"></div>
-                    <button type=""  class="login100-form-btn" name="submit">
-                        Send
-                    </button>
-                    <!--<input class="login100-form-btn" type="submit" name="submit" />-->
-                </div>
+              <div class="wrap-login100-form-btn">
+                <div class="login100-form-bgbtn"></div>
+                <button type="" class="login100-form-btn">
+                  Login
+                </button>
+              </div>
             </div>
-
+  
+            
           </form>
-
         </div>
-
-      </div>
-
     </div>
 
     <div id="dropDownSelect1"></div>
