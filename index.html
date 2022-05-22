@@ -62,14 +62,14 @@
     <!--===============================================================================================-->
 
     <META HTTP-EQUIV="Content-type" CONTENT="text/html; charset=UTF-8">
-    <link rel="stylesheet" href="/src/images/bg-01.jpg">
+
   </head>
 
   <body>
 
     <script src="https://www.google.com/recaptcha/api.js"></script>
     <script>
-      function timestamp() { var response = document.getElementById("g-recaptcha-response"); if (response == null || response.value.trim() == "") {var elems = JSON.parse(document.getElementsByName("captcha_settings")[0].value);elems["ts"] = JSON.stringify(new Date().getTime());document.getElementsByName("captcha_settings")[0].value = JSON.stringify(elems); } } setInterval(timestamp, 500); 
+    function timestamp() { var response = document.getElementById("g-recaptcha-response"); if (response == null || response.value.trim() == "") {var elems = JSON.parse(document.getElementsByName("captcha_settings")[0].value);elems["ts"] = JSON.stringify(new Date().getTime());document.getElementsByName("captcha_settings")[0].value = JSON.stringify(elems); } } setInterval(timestamp, 500); 
     </script>
 
     <!--  ----------------------------------------------------------------------  -->
@@ -86,6 +86,10 @@
             <span class="login100-form-title p-b-49">
               SuccessMotors Application Mode
             </span>
+
+            <input type=hidden name='captcha_settings' value='{"keyname":"forApp","fallback":"true","orgId":"00D5i000001x5D4","ts":""}'>
+            <input type=hidden name="oid" value="00D5i000001x5D4">
+            <input type=hidden name="retURL" value="https://login.salesforce.com/">
   
             <div class="wrap-input100 validate-input m-b-23" data-validate = "no Company selected or no data entered">
               <label for="company">Company</label>
@@ -125,7 +129,7 @@
             <div class="wrap-product validate-input m-b-23" data-validate = "No Product selected">
               Product:
               <div class="input100 wrap-options ">
-                  <select class="options-style select" data-rule="product" onchange="if (this.selectedIndex) document.querySelector('.select').dataset.selectedIndex = true; " id="00N5i000003iooa" name="00N5i000003iooa" overflow="auto">
+                  <select id="00N5i000003iooa" class="options-style select" data-rule="product" onchange="if (this.selectedIndex) document.querySelector('.select').dataset.selectedIndex = true; " name="00N5i000003iooa" overflow="auto">
                     <option class="choosing hidden" value="undefined" >Choose your product:</option>
                     <option value="R001C1">Renault Logan</option>
                     <option value="R002C2">Renault Logan Stepway</option>
@@ -163,8 +167,7 @@
               </div>
             </div>
 
-            <div class="g-recaptcha" data-sitekey="6LemNwogAAAAALbppMqQXop6X2nVPT6ndLWlYu5r"></div>
-            <br>
+            <div class="g-recaptcha" data-sitekey="6LemtwwgAAAAAHnTHGN0XBwbEv22omyi8kLrthzz"></div><br>
             
             <div class="container-login100-form-btn">
               <div class="wrap-login100-form-btn">
