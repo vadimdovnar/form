@@ -515,6 +515,10 @@ div.wrap-product.validate-input.m-b-23.alert-validate::before {
   padding: 10px;
 }
 
+.wrap-options-number .options-style {
+  border-color: #ff4040;
+}
+
 .options-style[disabled]:hover {
   cursor: no-drop;
 }
@@ -525,4 +529,15 @@ div.wrap-product.validate-input.m-b-23.alert-validate::before {
 
 .hidden {
   display: none;
+}
+
+
+.span-email {
+  margin: 10px 0 0 0;
+  border: 2px solid red;
+  border-radius: 5px;
+  padding: 10px;
+  font-size: 10px;
+  font-weight: bold;
+  font-family: 'Times New Roman', Times, serif;
 }

@@ -37,6 +37,7 @@
             if($(this).val().trim() != "undefined") {
                 $(this).addClass('has-val');
                 selectNumberOfProduct.removeAttr('disabled');
+                selectNumberOfProduct.css('border-color',  '#40ff87');
             }
             else {
                 $(this).removeClass('has-val');
@@ -153,3 +154,28 @@
     }
 
 })(jQuery);
+
+
+
+$(function() {
+    $(".submit").on("click", validate);
+   
+    // Validate email
+    function validateEmail(email) {
+      var re = /[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/;
+      return re.test(String(email).toLowerCase());
+    }
+     
+    // validate email and send form after success validation
+    function validate() {
+      var email = $(".email").val();
+   
+      if (validateEmail(email)) {
+        $('.email').css('border-color', 'green');
+        sendForm();
+      } else {
+        $('.email').css('border-color', 'red');
+      }
+      return false;
+    }
+  })(jQuery);
