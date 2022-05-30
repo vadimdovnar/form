@@ -30,13 +30,17 @@
     /*=================================================================
     [Change select]*/
     $('.select').each(function(){
+        var selectNumberOfProduct = $('.number-of-products');
+
         $(this).on('change', function(){
 
             if($(this).val().trim() != "undefined") {
                 $(this).addClass('has-val');
+                selectNumberOfProduct.removeAttr('disabled');
             }
             else {
                 $(this).removeClass('has-val');
+                selectNumberOfProduct.attr('disabled');
             }
         })    
     })
@@ -63,6 +67,7 @@
             checkForSelect = false;
         }
         var result = !(check == false || checkForSelect == false);
+    
         return result;
     });
 
@@ -130,27 +135,21 @@
 
     function showValidate(input) {
         if (input.tagName == 'INPUT' || input.hasClass('input100')) {
-            console.log('input');
             var thisAlert = $(input).parent();
             $(thisAlert).addClass('alert-validate');
         } else {
-            console.log('select');
             $('.wrap-product').addClass('alert-validate');
         }       
     }
     
     function hideValidate(input) {
         if (input.tagName == 'INPUT' || input.hasClass('input100')) {
-            console.log('input');
             var thisAlert = $(input).parent();
             $(thisAlert).removeClass('alert-validate');
         } else {
-            console.log('select');
             $('.wrap-product').removeClass('alert-validate');
         }
             
     }
-
-    
 
 })(jQuery);

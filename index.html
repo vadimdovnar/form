@@ -10,11 +10,6 @@
     <link rel="stylesheet" type="text/css" href="/src/vendor/bootstrap/css/bootstrap.min.css"/>
     <link rel="stylesheet" type="text/css" href="/src/fonts/font-awesome-4.7.0/css/font-awesome.min.css"/>
     <link rel="stylesheet" type="text/css" href="/src/fonts/iconic/css/material-design-iconic-font.min.css"/>
-    <link rel="stylesheet" type="text/css" href="/src/vendor/animate/animate.css"/>
-    <link rel="stylesheet" type="text/css" href="/src/vendor/css-hamburgers/hamburgers.min.css"/>
-    <link rel="stylesheet" type="text/css" href="/src/vendor/animsition/css/animsition.min.css"/>
-    <link rel="stylesheet" type="text/css" href="/src/vendor/select2/select2.min.css"/>
-    <link rel="stylesheet" type="text/css" href="/src/vendor/daterangepicker/daterangepicker.css"/>
     <link rel="stylesheet" type="text/css" href="/src/styles/util.css" />
     <link rel="stylesheet" type="text/css" href="/src/styles/main.css" />
 
@@ -26,14 +21,14 @@
 
     <script src="https://www.google.com/recaptcha/api.js"></script>
     <script>
-      function timestamp() { 
-        var response = document.getElementById("g-recaptcha-response"); 
-        if (response == null || response.value.trim() == "") {
-          var elems = JSON.parse(document.getElementsByName("captcha_settings")[0].value);
-          elems["ts"] = JSON.stringify(new Date().getTime());
-          document.getElementsByName("captcha_settings")[0].value = JSON.stringify(elems); 
-        } 
-      } setInterval(timestamp, 500); 
+    function timestamp() { 
+      var response = document.getElementById("g-recaptcha-response"); 
+      if (response == null || response.value.trim() == "") {
+        var elems = JSON.parse(document.getElementsByName("captcha_settings")[0].value);
+        elems["ts"] = JSON.stringify(new Date().getTime());
+        document.getElementsByName("captcha_settings")[0].value = JSON.stringify(elems); 
+      } 
+    } setInterval(timestamp, 500); 
     </script>
 
     <div class="limiter">
@@ -49,7 +44,7 @@
 
             <input type=hidden name='captcha_settings' value='{"keyname":"capthSMApp","fallback":"true","orgId":"00D5i000001x5D4","ts":""}'>
             <input type=hidden name="oid" value="00D5i000001x5D4">
-            <input type=hidden name="retURL" value="https://login.salesforce.com/">
+            <input type=hidden name="retURL" value="http://yandex.ru">
   
             <div class="wrap-input100 validate-input m-b-23" data-validate = "no Company selected or no data entered">
               <label for="company">Company</label>
@@ -88,8 +83,8 @@
 
             <div class="wrap-product validate-input m-b-23" data-validate = "No Product selected">
               Product:
-              <div class="input100 wrap-options ">
-                  <select id="00N5i000003iooa" name="00N5i000003iooa" class="options-style select" data-rule="product" onchange="if (this.selectedIndex) document.querySelector('.select').dataset.selectedIndex = true; " overflow="auto">
+              <div class="input100 wrap-options">
+                  <select id="00N5i000003iooa" name="00N5i000003iooa"  class="options-style select" data-rule="product" onchange="if (this.selectedIndex) document.querySelector('.select').dataset.selectedIndex = true; " overflow="auto">
                     <option class="choosing hidden" value="undefined" >Choose your product:</option>
                     <option value="R001C1">Renault Logan</option>
                     <option value="R002C2">Renault Logan Stepway</option>
@@ -127,6 +122,24 @@
               </div>
             </div>
 
+            <div class="wrap-product">
+              Number of Products
+              <div class="input100 wrap-options-number">
+                <select id="00N5i000006kBKd" class="options-style number-of-products" name="00N5i000006kBKd" disabled type="text" overflow="auto">
+                  <option value="1" selected>1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                  <option value="5">5</option>
+                  <option value="6">6</option>
+                  <option value="7">7</option>
+                  <option value="8">8</option>
+                  <option value="9">9</option>
+                  <option value="10">10</option>
+                </select>
+              </div>
+            </div>
+
           <div class="g-recaptcha" data-sitekey="6LdfIw0gAAAAAG5fAHOmGFQOTzWFdlmjlxkXesVe"></div>
           <br>
             
@@ -147,13 +160,6 @@
     <div id="dropDownSelect1"></div>
 	
     <script src="/src/vendor/jquery/jquery-3.2.1.min.js"></script>
-    <script src="/src/vendor/animsition/js/animsition.min.js"></script>
-    <script src="/src/vendor/bootstrap/js/popper.js"></script>
-    <script src="/src/vendor/bootstrap/js/bootstrap.min.js"></script>
-    <script src="/src/vendor/select2/select2.min.js"></script>
-    <script src="/src/vendor/daterangepicker/moment.min.js"></script>
-    <script src="/src/vendor/daterangepicker/daterangepicker.js"></script>
-    <script src="/src/vendor/countdowntime/countdowntime.js"></script>
     <script src="/src/js/main.js"></script>
   </body>
 </html>
