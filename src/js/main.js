@@ -37,7 +37,7 @@
             if($(this).val().trim() != "undefined") {
                 $(this).addClass('has-val');
                 selectNumberOfProduct.removeAttr('disabled');
-                selectNumberOfProduct.css('border-color',  '#d9d9d9');
+                selectNumberOfProduct.css('border-color', '#d9d9d9');
             }
             else {
                 $(this).removeClass('has-val');
@@ -67,7 +67,7 @@
             checkForSelect = false;
         }
 
-        var result = !(check == false || checkForSelect == false);
+        var result = !(check == false || checkForSelect == false || captchaIsValid == false);
     
         return result;
     });
