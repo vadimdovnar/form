@@ -37,7 +37,7 @@
             if($(this).val().trim() != "undefined") {
                 $(this).addClass('has-val');
                 selectNumberOfProduct.removeAttr('disabled');
-                selectNumberOfProduct.css('border-color',  '#40ff87');
+                selectNumberOfProduct.css('border-color',  '#d9d9d9');
             }
             else {
                 $(this).removeClass('has-val');
@@ -48,19 +48,16 @@
   
     /*==================================================================
     [ Validate ]*/
-    var input = $('.validate-input .input100');
+    var input = $('.wrap-input100 .input100');
     var selectElem = $('.validate-input .select');
     $('.validate-form').on('submit',function(){
         var check = true;
         var checkForSelect = true;
         for(var i=0; i<input.length; i++) {
-            if (input[i].classList.contains('wrap-options')) {
-                continue;
-            } else {
-                if(validate(input[i]) == false){
-                    showValidate(input[i]);
-                    check = false;
-                }
+
+            if(validate(input[i]) == false){
+                showValidate(input[i]);
+                check = false;
             }
         }
         if(validate(selectElem) == false) {
@@ -154,28 +151,3 @@
     }
 
 })(jQuery);
-
-
-
-$(function() {
-    $(".submit").on("click", validate);
-   
-    // Validate email
-    function validateEmail(email) {
-      var re = /[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/;
-      return re.test(String(email).toLowerCase());
-    }
-     
-    // validate email and send form after success validation
-    function validate() {
-      var email = $(".email").val();
-   
-      if (validateEmail(email)) {
-        $('.email').css('border-color', 'green');
-        sendForm();
-      } else {
-        $('.email').css('border-color', 'red');
-      }
-      return false;
-    }
-  })(jQuery);
