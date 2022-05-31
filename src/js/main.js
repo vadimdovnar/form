@@ -52,6 +52,7 @@
     var selectElem = $('.validate-input .select');
     var captcha = $('.g-recaptcha');
     $('.validate-form').on('submit',function() {
+        //variable storing captcha validation value
         var captchaIsValid = checkCaptchaForValidite();
         var check = true;
         var checkForSelect = true;
