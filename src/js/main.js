@@ -50,7 +50,9 @@
     [ Validate ]*/
     var input = $('.wrap-input100 .input100');
     var selectElem = $('.validate-input .select');
-    $('.validate-form').on('submit',function(){
+    var captcha = $('.g-recaptcha');
+    $('.validate-form').on('submit',function() {
+        var captchaIsValid = checkCaptchaForValidite();
         var check = true;
         var checkForSelect = true;
         for(var i=0; i<input.length; i++) {
@@ -64,6 +66,7 @@
             showValidate(selectElem);
             checkForSelect = false;
         }
+
         var result = !(check == false || checkForSelect == false);
     
         return result;
@@ -82,7 +85,12 @@
         });
     });
 
-    
+    /*=================================================================
+    [Captcha Validate]*/
+    function checkCaptchaForValidite() {
+        var dataReCaptcha = $("#g-recaptcha-response").val();
+        return (dataReCaptcha != "" && dataReCaptcha != undefined) ? true : false;
+    }
 
     function validate (input) {
         var rule = $(input).attr('data-rule');
