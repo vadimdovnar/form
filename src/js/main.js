@@ -4,7 +4,7 @@
     
     // event for adding a phone number code when clicking on an input
     var inputPhone = $('.input-phone');
-    inputPhone.on('click', function() {
+    inputPhone.on('focus', function() {
         $(this).val('+375');
     })
 
@@ -92,9 +92,14 @@
     });
 
     // event hiding captcha validation popup
-    $('.g-recaptcha').on('mouseover', function() {
-        hideValidate(captcha);
+    let captha = document.querySelector('body');
+    captha.addEventListener('click', function(e) {
+        console.log(e.target.className);
     })
+    // $('.g-recaptcha').on('mouseover', function() {
+    //     console.log('sdfsdfsjfiusdhfusdhiufhsdiuhfoisdyfoisdhofgusodifjosidhjfowfhjsdfosdhflsdk');
+    //     hideValidate(captcha);
+    // })
 
     // this method returns true if the captcha passed, otherwise it returns false
     function checkCaptchaForValidite() {
@@ -158,9 +163,7 @@
             $(thisAlert).addClass('alert-validate');
         } else if(input.hasClass('select')) {
             $('.wrap-product').addClass('alert-validate');
-        } else {
-            input.addClass('alert-validate');
-        }     
+        }    
     }
     
     // field validation popup hide method
@@ -171,9 +174,7 @@
             $(thisAlert).removeClass('alert-validate');
         } else if(input.hasClass('select')) {
             $('.wrap-product').removeClass('alert-validate');
-        } else {
-            input.removeClass('alert-validate');
-        }  
+        } 
     }
 
 })(jQuery);
