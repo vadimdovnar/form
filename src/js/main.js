@@ -1,24 +1,25 @@
 
 (function ($) {
-    "use strict";
-
+    'use strict';
+    
+    // event for adding a phone number code when clicking on an input
     var inputPhone = $('.input-phone');
     inputPhone.on('click', function() {
         $(this).val('+375');
     })
 
+    // event to remove input default value if phone number is not entered
     inputPhone.on('blur', function() {
         if($(this).val() == '+375') {
             $(this).val(null);
         }
     })
 
-     /*==================================================================
-    [ Focus input ]*/
+    // the method checks after losing the focus of an element, whether the field contains a value
     $('.input100').each(function(){
         $(this).on('blur', function(){
 
-            if($(this).val().trim() != "") {
+            if($(this).val().trim() != '') {
                 $(this).addClass('has-val');
             }
             else {
@@ -27,14 +28,13 @@
         })    
     })
 
-    /*=================================================================
-    [Change select]*/
+    // the method checks after losing the focus of the element, whether the Product field contains the value...
     $('.select').each(function(){
         var selectNumberOfProduct = $('.number-of-products');
 
         $(this).on('change', function(){
 
-            if($(this).val().trim() != "undefined") {
+            if($(this).val().trim() != 'undefined') {
                 $(this).addClass('has-val');
                 selectNumberOfProduct.removeAttr('disabled');
                 selectNumberOfProduct.css('border-color', '#d9d9d9');
@@ -46,26 +46,30 @@
         })    
     })
   
-    /*==================================================================
-    [ Validate ]*/
+    // check for validation of the entire form
     var input = $('.wrap-input100 .input100');
     var selectElem = $('.validate-input .select');
     var captcha = $('.g-recaptcha');
     $('.validate-form').on('submit',function() {
-        //variable storing captcha validation value
+        
         var captchaIsValid = checkCaptchaForValidite();
         var check = true;
         var checkForSelect = true;
-        for(var i=0; i<input.length; i++) {
+        for(var i = 0; i < input.length; i++) {
 
             if(validate(input[i]) == false){
                 showValidate(input[i]);
                 check = false;
             }
         }
+
         if(validate(selectElem) == false) {
             showValidate(selectElem);
             checkForSelect = false;
+        }
+
+        if(!captchaIsValid) {
+            showValidate(captcha);
         }
 
         var result = !(check == false || checkForSelect == false || captchaIsValid == false);
@@ -73,32 +77,39 @@
         return result;
     });
 
-
+    // event hiding validation popup for Company, First Name, Last Name, Email, Phone fields
     $('.validate-form .input100').each(function(){
         $(this).focus(function(){
             hideValidate($(this));
         });
     });
-    
+
+    // event hiding validation popup for Product select field
     $('.validate-form .select').each(function(){
         $(this).change(function(){
            hideValidate($(this));
         });
     });
 
-    /*=================================================================
-    [Captcha Validate]*/
+    // event hiding captcha validation popup
+    $('.g-recaptcha').on('mouseover', function() {
+        hideValidate(captcha);
+    })
+
+    // this method returns true if the captcha passed, otherwise it returns false
     function checkCaptchaForValidite() {
-        var dataReCaptcha = $("#g-recaptcha-response").val();
-        return (dataReCaptcha != "" && dataReCaptcha != undefined) ? true : false;
+        var dataReCaptcha = $('#g-recaptcha-response').val();
+        return (dataReCaptcha != '' && dataReCaptcha != undefined) ? true : false;
     }
 
+    // this method returns false if the field is empty or not defined, otherwise it calls the validDataRule method
     function validate (input) {
         var rule = $(input).attr('data-rule');
-        var result = ($(input).val().trim() == '' || $(input).val() == "undefined") ? false : validDataRule(rule, input);
+        var result = ($(input).val().trim() == '' || $(input).val() == 'undefined') ? false : validDataRule(rule, input);
         return result;
     }
 
+    // this method checks against regular expressions such fields as Company, First Name, Last Name, Email, Phone, Product
     function validDataRule(rule, input) {
         var length = +$(input).val().length;
         var value = $(input).val();
@@ -132,31 +143,37 @@
             break;
 
             case 'product':
-                if(value == "undefined") {
+                if(value == 'undefined') {
                     return false;
                 }
             break;
         }
     }
     
-
+    // method adding field validation popup
     function showValidate(input) {
+        
         if (input.tagName == 'INPUT' || input.hasClass('input100')) {
             var thisAlert = $(input).parent();
             $(thisAlert).addClass('alert-validate');
-        } else {
+        } else if(input.hasClass('select')) {
             $('.wrap-product').addClass('alert-validate');
-        }       
+        } else {
+            input.addClass('alert-validate');
+        }     
     }
     
+    // field validation popup hide method
     function hideValidate(input) {
+
         if (input.tagName == 'INPUT' || input.hasClass('input100')) {
             var thisAlert = $(input).parent();
             $(thisAlert).removeClass('alert-validate');
-        } else {
+        } else if(input.hasClass('select')) {
             $('.wrap-product').removeClass('alert-validate');
-        }
-            
+        } else {
+            input.removeClass('alert-validate');
+        }  
     }
 
 })(jQuery);
