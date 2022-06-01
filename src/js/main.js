@@ -91,11 +91,6 @@
         });
     });
 
-    
-    // $('.g-recaptcha').on('click', function() {
-    //     hideValidate(captcha);
-    // })
-
     // this method returns true if the captcha passed, otherwise it returns false
     function checkCaptchaForValidite() {
         var dataReCaptcha = $('#g-recaptcha-response').val();
