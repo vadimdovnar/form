@@ -91,13 +91,8 @@
         });
     });
 
-    // event hiding captcha validation popup
-    let captha = document.querySelector('body');
-    captha.addEventListener('click', function(e) {
-        console.log(e.target.className);
-    })
-    // $('.g-recaptcha').on('mouseover', function() {
-    //     console.log('sdfsdfsjfiusdhfusdhiufhsdiuhfoisdyfoisdhofgusodifjosidhjfowfhjsdfosdhflsdk');
+    
+    // $('.g-recaptcha').on('click', function() {
     //     hideValidate(captcha);
     // })
 
