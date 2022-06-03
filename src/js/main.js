@@ -114,8 +114,8 @@
         switch(rule) {
             
             case 'string-company':
-                if( ((value.trim().match(/[a-z]+|[0-9]+/i) == null) || ((length < lengthFrom) || (length > lengthTo)))) {
-                    return false;
+                if( ((value.trim().match(/^[a-z\s]+$/i) == null) || ((length < lengthFrom) || (length > lengthTo)))) {
+                    return false;   
                 }
             break;
                 
@@ -126,7 +126,7 @@
             break;
                 
             case 'email': 
-                if(value.trim().match(/^[A-Z0-9._%+-]+@[A-Z0-9-]+.+.[A-Z]{2,4}$/i) == null) {
+                if(value.trim().match(/^([a-z0-9_-]+\.)*[a-z0-9_-]+@[a-z0-9_-]+(\.[a-z0-9_-]+)*\.com$/) == null) {
                     return false;
                 }
             break;
